@@ -9,7 +9,7 @@ with open(Arquivo, 'r', encoding='UTF-8') as f:
         for i in linha.split(','):
             Lista.append(i)
             print(Lista)
-f.close()
+            
 Keyword = input(print("Dê uma palavra-chave: "))
 
 for item in Lista:
