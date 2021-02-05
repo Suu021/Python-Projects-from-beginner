@@ -7,7 +7,7 @@ def Requisicao(titulo, key):
         dic = json.loads(req.text)
         return dic
     except:
-        print("Algo deu errado")
+        print("Algo deu errado!")
         return None
 
 def Detalhes_do_filme(filme):
