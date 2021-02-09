@@ -19,7 +19,7 @@ def tempo_quebrar_senha(teste):
     return tempo
 
 
-senha = input(print("Digite a senha que deseja testar: "))
+senha = input("Digite a senha que deseja testar: ")
 teste = testador(senha)
 tempo_teste = tempo_quebrar_senha(teste)
 print(teste)
