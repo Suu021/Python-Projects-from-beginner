@@ -2,12 +2,12 @@ def testador(key):
     import random
     import string
 
-    letras = string.ascii_uppercase
+    todos_caract = string.ascii_uppercase+string.ascii_lowercase+string.digits
     num_letras = len(key)
 
-    codigo = ''.join(random.choice(letras) for _ in range(num_letras))
+    codigo = ''.join(random.choice(todos_caract) for _ in range(num_letras))
     while codigo != key:
-        codigo = ''.join(random.choice(letras) for _ in range(num_letras))
+        codigo = ''.join(random.choice(todos_caract) for _ in range(num_letras))
         if codigo == key:
             return codigo
 
