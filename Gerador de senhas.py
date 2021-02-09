@@ -6,7 +6,6 @@ def gerador_senha (key):
     codigo = ''.join(random.choice(todos_caract) for _ in range(key))
     return codigo
 
-str = input(print("Digite o número de caracteres que deseja pra sua senha: "))
-num= int(str)
+num = int(input(print("Digite o número de caracteres que deseja pra sua senha: ")))
 senha = gerador_senha(num)
 print("Sua nova senha é: ", senha)
