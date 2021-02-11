@@ -2,7 +2,7 @@ def gerador_senha (key):
     import random
     import string
 
-    todos_caract = string.ascii_uppercase+string.ascii_lowercase+string.digits
+    todos_caract = string.ascii_uppercase+string.ascii_lowercase+string.digits+string.punctuation
     codigo = ''.join(random.choice(todos_caract) for _ in range(key))
     return codigo
 

@@ -2,7 +2,7 @@ def testador(key):
     import random
     import string
 
-    todos_caract = string.ascii_uppercase+string.ascii_lowercase+string.digits
+    todos_caract = string.ascii_uppercase+string.ascii_lowercase+string.digits+string.punctuation
     num_letras = len(key)
 
     codigo = ''.join(random.choice(todos_caract) for _ in range(num_letras))
