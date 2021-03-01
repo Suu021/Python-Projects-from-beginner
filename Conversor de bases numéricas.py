@@ -18,17 +18,48 @@ def octal(num):
         num = num // 8
     lista_oc.append(str(num))
     octal = "".join(lista_oc)
-    print(octal[::-1])
+    return octal[::-1]
 
-num = int(input("Qual número quer converter? "))
-menu = input("Menu:"
-              "\n(a)Binário;"
-              "\n(b)octal;"
-             "\npara qual sistema deseja converter? ")
+def hex(num):
+    lista_hex = []
+    while num >= 16:
+        div = num % 16
+        if 15 >= div >= 10:
+            dic_hexa = {
+                "10": "A",
+                "11": "B",
+                "12": "C",
+                "13": "D",
+                "14": "E",
+                "15": "F"
+            }
+            div = str(div)
+            div = dic_hexa[div]
+        lista_hex.append(str(div))
+        hex = "".join(lista_hex)
+        num = num // 16
+    lista_hex.append(str(num))
+    hex = "".join(lista_hex)
+    return hex[::-1]
 
-if menu is "a":
-    print(binario(num))
-elif menu is "b":
-    print(octal(num))
-else:
-    print("Opção inválida!")
+sair = False
+while not sair:
+    menu = input("Menu:"
+                  "\n(a)Binário;"
+                  "\n(b)Octal;"
+                  "\n(c)Hexadecimal;"
+                  "\nQualquer outra tecla para sair."
+                  "\nPara qual sistema deseja converter o número decimal? ").strip().lower()
+
+    if menu == "a":
+        num = int(input("Qual valor quer converter? "))
+        print(binario(num))
+    elif menu == "b":
+        num = int(input("Qual valor quer converter? "))
+        print(octal(num))
+    elif menu == "c":
+        num = int(input("Qual valor quer converter? "))
+        print(hex(num))
+    else:
+        print("Saindo...")
+        sair = True
