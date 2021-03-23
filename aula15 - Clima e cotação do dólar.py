@@ -23,30 +23,42 @@ def info_Cotacao(key):
         return None
 
 def detalhes_Clima_e_Cotacao(clima, cotacao):
+    print("=-="*20)
     print('Clima:')
-    print('Cidade: ', clima["city"])
-    print('Temperatura: ', str(clima['temp']) + '°C')
-    print('O dia está: ', clima['description'])
-    print('Umidade relativa: ', str(clima['humidity']) + '%')
-    print('Velocidade do vento: ', clima['wind_speedy'])
-    print('')
+    print(f'Cidade: {clima["city"]}')
+    print(f'Temperatura: {str(clima["temp"])} °C')
+    print(f'O dia está {clima["description"]}')
+    print(f'Umidade relativa: {str(clima["humidity"])}%')
+    print(f'Velocidade do vento: {clima["wind_speedy"]}')
+    print("=-="*20)
     print('Cotacão:')
-    print('Dólar: ', '\nCompra: ', cotacao['USD']['buy'], '\nVenda: ', cotacao['USD']['sell'], '\nVariação: ', cotacao['USD']['variation'])
-    print('')
-    print('Euro: ', '\nCompra: ', cotacao['EUR']['buy'], '\nVenda: ', cotacao['EUR']['sell'], '\nVariação: ', cotacao['EUR']['variation'])
-    print('')
-    print('Peso Argentino: ', '\nCompra: ', cotacao['ARS']['buy'], '\nVenda: ', cotacao['ARS']['sell'], '\nVariação: ', cotacao['ARS']['variation'])
-    print('')
-    print('Bitcoin: ', '\nCompra: ', cotacao['BTC']['buy'], '\nVenda: ', cotacao['BTC']['sell'], '\nVariação: ', cotacao['BTC']['variation'])
-    print('')
+    print(f'Dólar: '
+          f'\nCompra: {cotacao["USD"]["buy"]}; '
+          f'\nVenda: {cotacao["USD"]["sell"]}; '
+          f'\nVariação: {cotacao["USD"]["variation"]}')
+    print('---'*20)
+    print(f'Euro: '
+          f'\nCompra: {cotacao["EUR"]["buy"]}; '
+          f'\nVenda: {cotacao["EUR"]["sell"]}; '
+          f'\nVariação: {cotacao["EUR"]["variation"]}')
+    print('---'*20)
+    print(f'Peso Argentino: '
+          f'\nCompra: {cotacao["ARS"]["buy"]}; '
+          f'\nVenda: {cotacao["ARS"]["sell"]};'
+          f'\nVariação: {cotacao["ARS"]["variation"]}')
+    print('---'*20)
+    print(f'Bitcoin: '
+          f'\nCompra: {cotacao["BTC"]["buy"]}; '
+          f'\nVenda: {cotacao["BTC"]["sell"]}; '
+          f'\nVariação: {cotacao["BTC"]["variation"]}')
+    print('---'*20)
 
 
-sair = False
-while not sair:
-    opcao = input("Informe a sua cidade ou digite SAIR para fechar: ")
+while True:
+    opcao = input("Informe a sua cidade ou digite SAIR para fechar: ").strip().lower()
     if opcao == "sair":
-        sair = True
         print("Saindo...")
+        break
     else:
         key = '23c8f6c7'
         clima = info_Clima(opcao, key)
