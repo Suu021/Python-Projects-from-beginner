@@ -42,24 +42,28 @@ def hex(num):
     hex = "".join(lista_hex)
     return hex[::-1]
 
-sair = False
-while not sair:
-    menu = input("Menu:"
-                  "\n(a)Binário;"
-                  "\n(b)Octal;"
-                  "\n(c)Hexadecimal;"
-                  "\nQualquer outra tecla para sair."
-                  "\nPara qual sistema deseja converter o número decimal? ").strip().lower()
+print("=-"*20)
+print(f"{'CONVERSOR DE BASES':^39}")
+print("=-"*20)
 
-    if menu == "a":
+while True:
+    menu = input("Menu:"
+                  "\n(b)Decimal para Binário;"
+                  "\n(o)Decimal para Octal;"
+                  "\n(h)Decimal para Hexadecimal;"
+                  "\nQualquer outra tecla para sair."
+                  "\nPara qual sistema deseja converter? ").strip().lower()[0]
+    print("=-" * 20)
+
+    if menu == "b":
         num = int(input("Qual valor quer converter? "))
         print(binario(num))
-    elif menu == "b":
+    elif menu == "o":
         num = int(input("Qual valor quer converter? "))
         print(octal(num))
-    elif menu == "c":
+    elif menu == "h":
         num = int(input("Qual valor quer converter? "))
         print(hex(num))
     else:
         print("Saindo...")
-        sair = True
+        break
