@@ -11,8 +11,17 @@ def gerador_senha(key):
 print("=-" * 20)
 print(f"{'Gerador de senhas':^40}")
 print("=-" * 20)
+while True:
+    num = input("Quantos caracteres você quer pra sua senha: ")
+    try:
+        int(num)
+    except Exception:
+        print(Fore.RED + f'Erro! "{num}" não é um número inteiro. Por favor, digite um número inteiro.' + Fore.RESET)
+        continue
+    else:
+        num = int(num)
+        break
 
-num = int(input("Quantos caracteres você quer pra sua senha: "))
 print("--" * 20)
 senha = gerador_senha(num)
 print(f"Sua nova senha é: " + Fore.MAGENTA + f"{senha}" + Fore.RESET)
