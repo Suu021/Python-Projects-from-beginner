@@ -55,9 +55,9 @@ def detalhes_Clima_e_Cotacao(clima, cotacao):
 
 
 while True:
-    opcao = input("Informe a sua cidade ou digite SAIR para fechar: ").strip().lower()
+    opcao = input('Informe a sua cidade ou digite "sair" para fechar: ').strip().lower()
     if opcao == "sair":
-        print("Saindo...")
+        print("Saindo... Volte sempre!")
         break
     else:
         key = '23c8f6c7'
