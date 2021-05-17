@@ -19,8 +19,8 @@ def tempo_quebrar_senha(teste):
     return tempo
 
 
-senha = input("Digite a senha que deseja testar: ")
+senha = input("Digite a password que deseja testar: ")
 teste = testador(senha)
 tempo_teste = tempo_quebrar_senha(teste)
 print(teste)
-print("O keylogger levaria aproximadamente ", tempo_teste, "segundos pra quebrar a sua senha")
+print("O keylogger levaria aproximadamente ", tempo_teste, "segundos pra quebrar a sua password")
