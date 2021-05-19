@@ -1,7 +1,7 @@
 from unittest import TestCase, main
 from re import compile
 import Tabuada
-import Gerador_de_senhas
+import Password_Generator
 from Morse_Decoder import decodeMorse
 
 
@@ -19,7 +19,7 @@ class MyTestCase_Gerador_de_senhas(TestCase):
 
         # for i in range(100):
         # with self.subTest(i=i):
-        self.assertRegex(Gerador_de_senhas.gerar_senha(16), regex)
+        self.assertRegex(Password_Generator.generate_password(16), regex)
 
 
 class MyTestCase_Morse_Decoder(TestCase):
